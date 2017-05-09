@@ -39,7 +39,19 @@ namespace AleeBrowser
 
         private void button3_Click(object sender, EventArgs e)
         {
+            NavigateToPage();
+        }
+        private void NavigateToPage()
+        {
             webBrowser1.Navigate(textBox1.Text);
+
         }
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)ConsoleKey.Enter)
+            {
+                NavigateToPage();
+            }
         }
+    }
         }

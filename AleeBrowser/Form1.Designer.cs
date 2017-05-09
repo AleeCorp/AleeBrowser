@@ -70,7 +70,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 13);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Alpha 0.1 Build 4";
+            this.label2.Text = "Alpha 0.2 Build 5";
             // 
             // button4
             // 
@@ -93,6 +93,7 @@
             this.textBox1.Size = new System.Drawing.Size(889, 20);
             this.textBox1.TabIndex = 7;
             this.textBox1.Text = "http://";
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // webBrowser1
             // 
