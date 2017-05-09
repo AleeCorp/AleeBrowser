@@ -66,7 +66,7 @@ namespace AleeBrowser
             }
         }
 
-        private void browser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        private void browser_DocumentCompleted(object sender, ChromiumWebBrowser.DocumentCompletedEventArgs e)
         {
             button3.Enabled = true;
             textBox1.Enabled = true;
@@ -94,3 +94,5 @@ namespace AleeBrowser
         }
     }
         }
+// This project was made in May 8th 2017 but while I was converting it to CefSharp it broke some features and PLEASE don't delete this project until the future thanks Alee14 the original creator.
+// And here's the "before convert" file of AleeBrowser https://www.dropbox.com/s/16q7ay6otd4njw4/AleeBrowser.exe?dl=0
