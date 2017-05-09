@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CefSharp;
+using CefSharp.WinForms;
+using CefSharp.WinForms.Internals;
 
 namespace AleeBrowser
 {
@@ -16,15 +19,21 @@ namespace AleeBrowser
         {
             InitializeComponent();
         }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
+        public CefSharp.WinForms.ChromiumWebBrowser browser;
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            webBrowser1.Navigate("http://alee14.ga");
+
+            browser = new CefSharp.WinForms.ChromiumWebBrowser("http://alee14.ga");
+            {
+                Dock = DockStyle.Fill;
+                Size = new Size(934, 459);
+                Location = new Point(18, 47);
+
+            };
+            this.panel1.Controls.Add(browser);
+                  // webBrowser1.Navigate("http://alee14.ga");
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -46,7 +55,7 @@ namespace AleeBrowser
             button3.Enabled = false;
             textBox1.Enabled = false;
             toolStripProgressBar1.Text = "Navigation has started";
-            webBrowser1.Navigate(textBox1.Text);
+            browser.Load(textBox1.Text);
 
         }
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -64,7 +73,7 @@ namespace AleeBrowser
             toolStripProgressBar1.Text = "Navigation Complete";
         }
 
-        private void webBrowser1_ProgressChanged(object sender, WebBrowserProgressChangedEventArgs e)
+        private void browser_ProgressChanged(object sender, WebBrowserProgressChangedEventArgs e)
         {
             if (e.CurrentProgress > 0 && e.MaximumProgress > 0)
             toolStripProgressBar1.ProgressBar.Value = (int)(e.CurrentProgress * 100 / e.MaximumProgress);
@@ -78,7 +87,7 @@ namespace AleeBrowser
 
         private void button2_Click(object sender, EventArgs e)
         {
-            foreach( HtmlElement image in webBrowser1.Document.Images)
+            foreach( HtmlElement image in browser.Document.Images)
             {
                 image.SetAttribute("src", "https://yt3.ggpht.com/-Iuf1v4-SSSM/AAAAAAAAAAI/AAAAAAAAAAA/89IYeQw--wU/s900-c-k-no-mo-rj-c0xffffff/photo.jpg");
             }
