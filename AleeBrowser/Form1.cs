@@ -66,7 +66,7 @@ namespace AleeBrowser
             }
         }
 
-        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        private void browser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
             button3.Enabled = true;
             textBox1.Enabled = true;
@@ -87,10 +87,10 @@ namespace AleeBrowser
 
         private void button2_Click(object sender, EventArgs e)
         {
-            foreach( HtmlElement image in browser.Document.Images)
-            {
-                image.SetAttribute("src", "https://yt3.ggpht.com/-Iuf1v4-SSSM/AAAAAAAAAAI/AAAAAAAAAAA/89IYeQw--wU/s900-c-k-no-mo-rj-c0xffffff/photo.jpg");
-            }
+          //  foreach( HtmlElement image in browser.Document.Images)
+          //  {
+          //      image.SetAttribute("src", "https://yt3.ggpht.com/-Iuf1v4-SSSM/AAAAAAAAAAI/AAAAAAAAAAA/89IYeQw--wU/s900-c-k-no-mo-rj-c0xffffff/photo.jpg");
+         //   }
         }
     }
         }
